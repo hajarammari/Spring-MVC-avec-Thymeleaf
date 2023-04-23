@@ -21,3 +21,6 @@ Application Web JEE basée sur Spring MVC, Thylemeaf et Spring Data JPA qui perm
 
 ### 2. Ajouter un patient
 ![image](https://user-images.githubusercontent.com/108992681/233870846-cae9df77-830d-4dfc-87d7-44eb17c757d1.png)
+
+## Base de données
+![image](https://user-images.githubusercontent.com/108992681/233871272-88022a56-d84c-4751-9284-5f25a522b206.png)
