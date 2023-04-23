@@ -15,18 +15,13 @@ import lombok.Builder;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-//ajouter les getters et setters
 @Data
-//Constructeur sans param
 @NoArgsConstructor
-//Constructeur avec param
 @AllArgsConstructor
 public class Patient implements Serializable {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @NotEmpty
     @Size(min = 4, max = 40)
     private String nom;
@@ -34,9 +29,6 @@ public class Patient implements Serializable {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateNaissance;
     private boolean malade;
-
     @DecimalMin("10")
     private int score;
-
-
 }

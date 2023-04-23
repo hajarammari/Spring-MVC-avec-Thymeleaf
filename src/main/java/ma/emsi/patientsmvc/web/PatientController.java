@@ -21,7 +21,6 @@ import java.util.List;
 public class PatientController {
     private PatientRepository patientRepository;
 
-
     @GetMapping(path="/index")
     public String patients(Model model,
                            @RequestParam(name = "page",defaultValue = "0") int page,
@@ -37,12 +36,12 @@ public class PatientController {
     }
 
     @GetMapping("/delete")
-//    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String delete(Long id, String keyword, int page) {
 
         patientRepository.deleteById(id);
         return "redirect:/index?page="+page+"&keyword="+keyword;
     }
+
     @GetMapping("/")
     public String home() {
         return "redirect:/index";
@@ -54,13 +53,12 @@ public class PatientController {
     }
 
     @GetMapping("/formPatients")
-//    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String formPatients(Model model){
         model.addAttribute("patient",new Patient());
         return "formPatients";
     }
+
     @GetMapping("/editPatients")
-//    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String editPatients(Model model,Long id , String keyword, int page){
         Patient patient=patientRepository.findById(id).orElse(null);
         if(patient==null) throw new RuntimeException("Patient introuvable");
@@ -71,17 +69,16 @@ public class PatientController {
     }
 
     @PostMapping(path="/save")
-//    @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public String save(Model model, //BindingResult place les erreurs dans le model
+    public String save(Model model,
                        @Valid Patient patient,
-                       BindingResult bindingResult  ,//gener la liste des erreur,
+                       BindingResult bindingResult,
                        @RequestParam(defaultValue = "0") int page ,
                        @RequestParam(defaultValue = "") String keyword) {
 
-        if(bindingResult.hasErrors()) return "formPatients";
+        if(bindingResult.hasErrors())
+            return "formPatients";
+
         patientRepository.save(patient);
         return "redirect:/index";
     }
-
-
 }
