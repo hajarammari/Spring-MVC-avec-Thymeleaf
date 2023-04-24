@@ -23,4 +23,4 @@ Application Web JEE basée sur Spring MVC, Thylemeaf et Spring Data JPA qui perm
 ![image](https://user-images.githubusercontent.com/108992681/233870846-cae9df77-830d-4dfc-87d7-44eb17c757d1.png)
 
 ## Base de données
-![image](https://user-images.githubusercontent.com/108992681/233871272-88022a56-d84c-4751-9284-5f25a522b206.png)
+![image](https://user-images.githubusercontent.com/108992681/234011583-043bf0f5-8fe3-403d-8ad9-b9001286fd9e.png)
